@@ -21,7 +21,7 @@ function draw(number){
         win_strike[win_strike.indexOf(number)] != undefined &&
         win_strike[win_strike.indexOf(number)] != undefined){
         // Рисует крестик
-        context.strokeStyle = 'red';
+        context.strokeStyle = '#ec4646';
         if (canvas.height == canvas.width){
             context.beginPath();
             context.moveTo(10, 10)
@@ -76,7 +76,7 @@ function draw(number){
         // Рисует нолик
         context.beginPath();
         context.lineWidth = 5;
-        context.strokeStyle = 'blue';
+        context.strokeStyle = '#51c2d5';
         if (canvas.height >= canvas.width){
             context.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 10, 0, 2 * Math.PI);
         }else{
