@@ -1,0 +1,23 @@
+body{
+    -moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+    overflow: hidden;
+    text-align:center;
+}
+
+.first-three{
+    border-right:2px black solid;
+    border-bottom:2px black solid;
+}
+
+.second-three{
+    border-left:2px black solid;
+    border-right:2px black solid;
+    border-bottom:2px black solid;
+}
+
+.third-three{
+    border-left:2px black solid;
+    border-bottom:2px black solid;
+}
