@@ -50,7 +50,7 @@ function draw(number){
         context.beginPath();
         context.lineWidth = 10;
         context.strokeStyle = 'blue';
-        context.arc(canvas.width / 2, canvas.height / 2, 90, 0, 2 * Math.PI);
+        context.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 10, 0, 2 * Math.PI);
         context.stroke();
         figure = "крестик";
         // Английская O

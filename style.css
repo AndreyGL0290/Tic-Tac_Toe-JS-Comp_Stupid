@@ -6,6 +6,11 @@ body{
     text-align:center;
 }
 
+canvas{
+    width:11vw;
+    height:20vh;
+}
+
 .first-three{
     border-right:2px black solid;
     border-bottom:2px black solid;
