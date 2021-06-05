@@ -5,6 +5,7 @@ let win_strike = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let button_restart;
 let context;
 let canvas;
+let gap;
 
 // Корректируем размеры холста
 correction();
@@ -21,15 +22,41 @@ function draw(number){
         win_strike[win_strike.indexOf(number)] != undefined){
         // Рисует крестик
         context.strokeStyle = 'red';
-        context.beginPath();
-        context.moveTo(10, 10)
-        context.lineTo(canvas.width-10, canvas.height-10);
-        context.lineWidth = 5;
-        context.stroke();
-        context.moveTo(canvas.width-10, 10);
-        context.lineTo(10, canvas.height-10);
-        context.lineWidth = 5;
-        context.stroke();
+        if (canvas.height == canvas.width){
+            context.beginPath();
+            context.moveTo(10, 10)
+            context.lineTo(canvas.width-10, canvas.height-10);
+            context.lineWidth = 5;
+            context.stroke();
+            context.moveTo(canvas.width-10, 10);
+            context.lineTo(10, canvas.height-10);
+            context.lineWidth = 5;
+            context.stroke();
+        }
+        else if (canvas.width > canvas.height){
+            context.beginPath();
+            gap = (canvas.width - canvas.height) / 2 ;
+            context.moveTo(gap+10, 10)
+            context.lineTo(canvas.width-gap-10, canvas.height-10);
+            context.lineWidth = 5;
+            context.stroke();
+            context.moveTo(canvas.width-gap-10, 10);
+            context.lineTo(gap+10, canvas.height-10);
+            context.lineWidth = 5;
+            context.stroke();
+        }
+        else{
+            context.beginPath();
+            gap = (canvas.height - canvas.width) / 2 ;
+            context.moveTo(10, gap+10)
+            context.lineTo(canvas.width-10, canvas.height-gap-10);
+            context.lineWidth = 5;
+            context.stroke();
+            context.moveTo(10, canvas.height-gap-10);
+            context.lineTo(canvas.width-10, gap+10);
+            context.lineWidth = 5;
+            context.stroke();
+        }
         figure = "нолик";
         // Английская X
         win_strike[win_strike.indexOf(number)] = 'X';
