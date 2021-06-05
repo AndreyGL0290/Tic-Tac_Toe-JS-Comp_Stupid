@@ -24,11 +24,11 @@ function draw(number){
         context.beginPath();
         context.moveTo(10, 10)
         context.lineTo(canvas.width-10, canvas.height-10);
-        context.lineWidth = 10;
+        context.lineWidth = 5;
         context.stroke();
         context.moveTo(canvas.width-10, 10);
         context.lineTo(10, canvas.height-10);
-        context.lineWidth = 10;
+        context.lineWidth = 5;
         context.stroke();
         figure = "нолик";
         // Английская X
@@ -48,9 +48,13 @@ function draw(number){
               win_strike[win_strike.indexOf(number)] != undefined){
         // Рисует нолик
         context.beginPath();
-        context.lineWidth = 10;
+        context.lineWidth = 5;
         context.strokeStyle = 'blue';
-        context.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 10, 0, 2 * Math.PI);
+        if (canvas.height >= canvas.width){
+            context.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 10, 0, 2 * Math.PI);
+        }else{
+            context.arc(canvas.width / 2, canvas.height / 2, canvas.height / 2 - 10, 0, 2 * Math.PI);
+        }
         context.stroke();
         figure = "крестик";
         // Английская O
