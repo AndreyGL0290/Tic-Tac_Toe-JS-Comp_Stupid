@@ -6,16 +6,8 @@ let button_restart;
 let context;
 let canvas;
 
-// Корректирем размеры холста
-correction(1);
-correction(2);
-correction(3);
-correction(4);
-correction(5);
-correction(6);
-correction(7);
-correction(8);
-correction(9);
+// Корректируем размеры холста
+correction();
 
 // Функция отрисовки
 function draw(number){
@@ -47,6 +39,7 @@ function draw(number){
             button_restart = document.getElementById('restart');
             button_restart.textContent = "Restart";
         }
+        standoff();
     }else if (figure == "нолик" &&
               player_1_win == false &&
               player_2_win == false &&
@@ -68,6 +61,7 @@ function draw(number){
             button_restart = document.getElementById('restart');
             button_restart.textContent = "Restart";
         }
+        standoff();
     }
 }
 
@@ -132,8 +126,20 @@ function restart(){
 }
 
 // Функция отвечающая за корректирование размеров холста
-function correction(number){
-    canvas = document.getElementById(number);
-    canvas.width = canvas.clientWidth;
-    canvas.height = canvas.clientHeight;
+function correction(){
+    for (let i = 1; i<10; i++){
+        canvas = document.getElementById(i);
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.clientHeight;
+    }
+}
+
+function standoff(){
+    for (let i = 1; i<10; i++){
+        if (win_strike.indexOf(i) != -1){
+            return;
+        }
+    }
+    document.getElementById('win').textContent = "Draw";
+    document.getElementById('restart').textContent = "Restart";
 }
