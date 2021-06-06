@@ -65,8 +65,9 @@ function draw(number){
             document.getElementById('win').textContent = "Player №1 wins";
             button_restart = document.getElementById('restart');
             button_restart.textContent = "Restart";
+        }else{
+            standoff();
         }
-        standoff();
     }else if (figure == "нолик" &&
               player_1_win == false &&
               player_2_win == false &&
@@ -92,7 +93,9 @@ function draw(number){
             button_restart = document.getElementById('restart');
             button_restart.textContent = "Restart";
         }
-        standoff();
+        else{
+            standoff();
+        }
     }
 }
 
