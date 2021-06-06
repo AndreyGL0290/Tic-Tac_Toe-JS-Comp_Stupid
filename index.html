@@ -9,39 +9,39 @@
 </head>
 <body>
     <h1>Tic-Tac-Toe</h1>
-    <h2>Click the field</h2>
+    <h2 id="turn"></h2>
     <div>
         <div style="display: inline-block;">
             <div class="first-three">
-                <canvas width="200" height="200" id="1" onmousedown="draw(1)"></canvas>
+                <canvas width="200" height="200" id="1" onmousedown="playerTurn(1)"></canvas>
             </div>
             <div class="first-three">
-                <canvas width="200" height="200" id="4" onmousedown="draw(4)"></canvas>
+                <canvas width="200" height="200" id="4" onmousedown="playerTurn(4)"></canvas>
             </div>
             <div class="first-three" style="border-bottom:0px;">
-                <canvas width="200" height="200" id="7" onmousedown="draw(7)"></canvas>
+                <canvas width="200" height="200" id="7" onmousedown="playerTurn(7)"></canvas>
             </div>
         </div>
         <div style="display: inline-block;">
             <div class="second-three">
-                <canvas width="200" height="200" id="2" onmousedown="draw(2)"></canvas>
+                <canvas width="200" height="200" id="2" onmousedown="playerTurn(2)"></canvas>
             </div>
             <div class="second-three">
-                <canvas width="200" height="200" id="5" onmousedown="draw(5)"></canvas>
+                <canvas width="200" height="200" id="5" onmousedown="playerTurn(5)"></canvas>
             </div>
             <div class="second-three" style="border-bottom:0px black solid;">
-                <canvas width="200" height="200" id="8" onmousedown="draw(8)"></canvas>
+                <canvas width="200" height="200" id="8" onmousedown="playerTurn(8)"></canvas>
             </div>
         </div>
         <div style="display: inline-block;">
             <div class="third-three">
-                <canvas width="200" height="200" id="3" onmousedown="draw(3)"></canvas>
+                <canvas width="200" height="200" id="3" onmousedown="playerTurn(3)"></canvas>
             </div>
             <div class="third-three">
-                <canvas width="200" height="200" id="6" onmousedown="draw(6)"></canvas>
+                <canvas width="200" height="200" id="6" onmousedown="playerTurn(6)"></canvas>
             </div>
             <div class="third-three" style="border-bottom:0px;">
-                <canvas width="200" height="200" id="9" onmousedown="draw(9)"></canvas>
+                <canvas width="200" height="200" id="9" onmousedown="playerTurn(9)"></canvas>
             </div>
         </div>
     </div>
