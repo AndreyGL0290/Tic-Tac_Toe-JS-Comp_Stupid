@@ -15,7 +15,7 @@ move();
 
 // Ход компьютера
 function computerTurn() {
-    // Выбираем в какую клеточку ходить
+    // Выбираем в какую клеточку ходить, если есть свободные
     if(!draw){
         while (win_strike.indexOf(ceil) == -1) {
             ceil = Math.random().toFixed(1) * 10;
@@ -191,6 +191,7 @@ function restart(){
         context = canvas.getContext("2d");
         context.clearRect(0, 0, canvas.width, canvas.height);
     }
+    draw = false;
     document.getElementById('restart').textContent = '';
     document.getElementById('win').textContent = '';
     win_strike = [1, 2, 3, 4, 5, 6, 7, 8, 9];
