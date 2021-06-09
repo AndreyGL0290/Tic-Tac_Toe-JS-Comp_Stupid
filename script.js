@@ -169,7 +169,6 @@ function check(symbol) {
             return true;
         }
     }
-    return false;
 }
 
 // Определяет ничью
