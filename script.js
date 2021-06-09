@@ -5,7 +5,6 @@ let canvas;
 let gap;
 let context;
 let ceil;
-let draw = false;
 
 // Корректируем длину и высоту холста
 correction();
@@ -16,7 +15,7 @@ move();
 // Ход компьютера
 function computerTurn() {
     // Выбираем в какую клеточку ходить, если есть свободные
-    if(!draw){
+    if(!standoff()){
         while (win_strike.indexOf(ceil) == -1) {
             ceil = Math.random().toFixed(1) * 10;
         }
@@ -175,12 +174,12 @@ function check(symbol) {
 function standoff(){
     for (let i = 1; i<10; i++){
         if (win_strike.indexOf(i) != -1){
-            return;
+            return false;
         }
     }
-    draw = true;
     document.getElementById('win').textContent = "Draw";
     document.getElementById('restart').textContent = "Restart";
+    return true;
 }
 
 // Отвечает за переигровку
@@ -190,7 +189,6 @@ function restart(){
         context = canvas.getContext("2d");
         context.clearRect(0, 0, canvas.width, canvas.height);
     }
-    draw = false;
     document.getElementById('restart').textContent = '';
     document.getElementById('win').textContent = '';
     win_strike = [1, 2, 3, 4, 5, 6, 7, 8, 9];
