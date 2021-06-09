@@ -60,7 +60,6 @@ function computerTurn() {
     }
     win_strike[win_strike.indexOf(ceil)] = comp_sym;
     context.stroke();
-    // 
     if (check(comp_sym)){
         document.getElementById('win').textContent = "Computer wins";
         document.getElementById('restart').textContent = "Restart";
